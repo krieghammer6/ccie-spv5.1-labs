@@ -7,8 +7,8 @@ topology:
   kinds:
     cisco_iol:
       image: vrnetlab/cisco_iol:17.15.01
-    ceos:
-      image: ceos:4.32.0F
+      image: vrnetlab/cisco_iol:L2-xe-17.16.01
+      type: l2
   nodes:
     R1:
       kind: cisco_iol
@@ -43,7 +43,9 @@ topology:
       mgmt-ipv4: 10.200.255.9
       startup-config: lab_configs/iol_http_source.partial
     SW:
-      kind: ceos
+      kind: cisco_iol
+      image: vrnetlab/cisco_iol:L2-xe-17.16.01
+      type: l2
       mgmt-ipv4: 10.200.255.10
       startup-config: lab_configs/SW.cfg
   links:
